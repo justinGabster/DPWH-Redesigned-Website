@@ -2389,4 +2389,18 @@ function _pinchDist(touches) {
   return Math.sqrt(dx*dx + dy*dy);
 }
 
+function toggleMobileNav() {
+  document.getElementById('nav-inner').classList.toggle('active');
+}
+
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      if (item.querySelector('.dropdown')) {
+        item.classList.toggle('open');
+      }
+    }
+  });
+});
+
 
